@@ -1,0 +1,8 @@
+<h1>Approve Article</h1>
+
+<p>{{ article.title }}</p>
+
+<form method="post">
+  {% csrf_token %}
+  <button type="submit">Approve</button>
+</form>

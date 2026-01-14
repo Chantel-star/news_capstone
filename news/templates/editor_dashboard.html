@@ -1,0 +1,12 @@
+<h1>Editor Dashboard</h1>
+
+<ul>
+  {% for article in articles %}
+    <li>
+      {{ article.title }}
+      <a href="{% url 'approve_article' article.id %}">
+        Approve
+      </a>
+    </li>
+  {% endfor %}
+</ul>
