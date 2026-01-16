@@ -1,0 +1,24 @@
+{% extends 'news/base.html' %}
+
+{% block content %}
+<h1>Publishers</h1>
+
+<ul>
+  {% for publisher in publishers %}
+    <li>
+      {{ publisher.name }}
+
+      <!-- Subscribe/Unsubscribe button -->
+      {% if user.is_authenticated and user.role == 'reader' %}
+        {% if publisher in user.subscribed_publishers.all %}
+          <a href="{% url 'subscribe_publisher' publisher.id %}">Unsubscribe</a>
+        {% else %}
+          <a href="{% url 'subscribe_publisher' publisher.id %}">Subscribe</a>
+        {% endif %}
+      {% endif %}
+    </li>
+  {% empty %}
+    <li>No publishers available.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

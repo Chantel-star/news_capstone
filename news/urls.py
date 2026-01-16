@@ -9,6 +9,11 @@ urlpatterns = [
          name='editor_dashboard'),
     path('approve/<int:article_id>/', views.approve_article,
          name='approve_article'),
+    path('publishers/', views.publisher_list, 
+         name='publisher_list'),
+    path('journalists/', views.journalist_list,
+         name='journalist_list'),
+
 ]
 
 

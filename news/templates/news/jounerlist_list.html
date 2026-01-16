@@ -1,0 +1,24 @@
+{% extends 'news/base.html' %}
+
+{% block content %}
+<h1>Journalists</h1>
+
+<ul>
+  {% for journalist in journalists %}
+    <li>
+      {{ journalist.email }} <!-- Or name if you have a field for it -->
+
+      <!-- Subscribe/Unsubscribe button -->
+      {% if user.is_authenticated and user.role == 'reader' %}
+        {% if journalist in user.subscribed_journalists.all %}
+          <a href="{% url 'subscribe_journalist' journalist.id %}">Unsubscribe</a>
+        {% else %}
+          <a href="{% url 'subscribe_journalist' journalist.id %}">Subscribe</a>
+        {% endif %}
+      {% endif %}
+    </li>
+  {% empty %}
+    <li>No journalists available.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

@@ -157,3 +157,5 @@ AUTH_USER_MODEL = 'news.CustomUser'
 # Development email backend
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'noreply@newsapp.com'
+
+X_BEARER_TOKEN = 'YOUR_X_BEARER_TOKEN_HERE'
