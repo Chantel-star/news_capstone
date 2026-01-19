@@ -13,7 +13,7 @@ RESTful API for third-party access.
 - Python 3.x
 - Django 5.x
 - Django REST Framework
-- SQLite (development)
+- MariaDB
 - HTML (Django Templates)
 - Requests (external API integration)
 
@@ -64,17 +64,7 @@ The database is fully normalised and includes:
 
 ---
 
-## REST API Endpoints
 
-| Endpoint | Description |
-|--------|------------|
-| `/api/articles/publisher/<id>/` | Approved articles by publisher |
-| `/api/articles/journalist/<id>/` | Approved articles by journalist |
-| `/api/articles/subscriptions/` | Articles based on reader subscriptions |
-
-All API responses return **approved articles only**.
-
----
 
 ## Testing
 

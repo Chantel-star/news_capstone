@@ -80,11 +80,17 @@ WSGI_APPLICATION = 'news_project.wsgi.application'
 # Database
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'news_db',
+        'USER': 'news_user',
+        'PASSWORD': 'password',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
+# NOTE:
+# MariaDB must be installed and configured as per README.md instructions
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
